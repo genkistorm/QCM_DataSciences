@@ -1,7 +1,7 @@
 const extraQuestions = [
     // --- REGRESSION LOGISTIQUE (Cours) ---
     {
-        question: "Quel est le but principal de la régression logistique introduit dans le document ?",
+        question: "Quel est le but principal de la régression logistique ?",
         options: [
             "Prédire la valeur continue exacte d'une fonction temporelle.",
             "Modéliser la probabilité d'un événement binaire ou catégoriel (e.g. succès/échec, oui/non).",
@@ -91,7 +91,7 @@ const extraQuestions = [
         correctIndexes: [2]
     },
     {
-        question: "Qu'est-ce qu'une Matrice de Confusion décrite dans le support ?",
+        question: "Qu'est-ce qu'une Matrice de Confusion en évaluation de modèle de classification ?",
         options: [
             "Un tableau croisé montrant Vrais Positifs, Vrais Négatifs, Faux Positifs, et Faux Négatifs.",
             "Un graphe superposant erreur Test et erreur Train.",
@@ -111,7 +111,7 @@ const extraQuestions = [
         correctIndexes: [2]
     },
     {
-        question: "La Précision a vocation, selon la définition du cours, à mesurer :",
+        question: "La métrique \"Précision\" a vocation à mesurer :",
         options: [
             "La capacité à détecter TOUS les individus malades/positifs sans exception.",
             "La capacité du modèle à ne pas faire d'erreur lors d'une prédiction déclarée positive.",
@@ -161,7 +161,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "D'après les annexes du support, le \"Taux de Faux Positif\" se définit par :",
+        question: "Le \"Taux de Faux Positif\" (False Positive Rate) se définit par :",
         options: [
             "La proportion de Faux Positifs parmi tous les cas qui sont réellement Négatifs.",
             "La proportion de Faux Positifs parmi tous les cas prédits Positifs.",
@@ -181,7 +181,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Dans un projet type de Machine Learning (selon la méthodologie du cours), quelles phases suivent directement l'Analyse Exploratoire ?",
+        question: "Dans un projet type de Machine Learning, quelles phases suivent généralement l'Analyse Exploratoire ?",
         options: [
             "Prétraitement des variables et Échantillonnage.",
             "Création de PDF et Sauvegarde SQL.",
@@ -201,27 +201,6 @@ const extraQuestions = [
         correctIndexes: [1, 2]
     },
 
-    // -- MORE Qs about the PDF files contents ---
-    {
-        question: "Dans l'exemple du cours prédisant le prix d'appartements parisiens en fonction de leurs pièces et m², combien de pièces comporte le pic principal statistique de distribution de la variable Pièces ?",
-        options: [
-            "2 pièces (~265 appartements).",
-            "4 pièces (~50 appartements).",
-            "1 pièce à vivre (~115 appartements).",
-            "8 pièces."
-        ],
-        correctIndexes: [0]
-    },
-    {
-        question: "Dans l'exemple du cours prédisant le prix d'appartements parisiens, le pic caractéristique de la distribution de la superficie (en m²) se situe entre :",
-        options: [
-            "10 et 20 m²",
-            "30 et 40 m² (~110 appartements)",
-            "70 et 80 m²",
-            "Approximativement 120 m²"
-        ],
-        correctIndexes: [1]
-    },
     {
         question: "Contrairement au StandardScaler, le MinMaxScaler transforme la distribution sans la recentrer sur 0. Quel défaut ou caractéristique visuelle cela peut-il entraîner sur des données asymétriques ?",
         options: [
@@ -243,7 +222,7 @@ const extraQuestions = [
         correctIndexes: [0, 1]
     },
     {
-        question: "Qu'est ce que l'erreur de prévision quantifiée lors de l'étude du Biais/Variance symbolise dans les courbes du document ?",
+        question: "Que symbolise l'erreur de prévision (mesurée sur l'ensemble de test) lors de l'étude du compromis Biais/Variance ?",
         options: [
             "Elle symbolise l'incapacité d'une droite de degré 1 à coller aux points.",
             "Elle sert de baromètre du généralisme d'un algorithme : au plus bas, l'algorithme a capturé l'essence sans apprendre le bruit par coeur.",
@@ -253,7 +232,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Quelle recommandation générale le cours \"Régression polynomiale\" fait-il pour contrer immédiatement une situation diagnostiquée de Sous-apprentissage ?",
+        question: "Quelle est l'approche générale recommandée pour contrer immédiatement une situation diagnostiquée de Sous-apprentissage (Underfitting) ?",
         options: [
             "Il faut simplifier le modèle drastiquement.",
             "L'apprentissage a de trop bons résultats, il faut l'étouffer par normalisation Normalizer.",
@@ -283,12 +262,12 @@ const extraQuestions = [
         correctIndexes: [0]
     },
     {
-        question: "En lisant les notes de références de la multivariée, que dit le texte concernant la solution aux problèmes de la non-inversibilité (matrice singulière OLS) ?",
+        question: "Dans certaines librairies, quelle est la solution algorithmique de contournement utilisée pour résoudre l'équation analytique (OLS) en cas de matrice X^TX non-inversible (singulière) ?",
         options: [
-            "Que le problème est mathématiquement irrésolu pour l'éternité.",
-            "Qu'il invite à se référer au Chapitre 15 de l'auteur pour trouver la solution de contournement.",
-            "Qu'il s'agit du résultat recherché pour conclure le TD.",
-            "Que cela confirme la nullité des résidus."
+            "L'utilisation exclusive d'arbres de décision.",
+            "L'utilisation de la pseudo-inverse de Moore-Penrose (souvent calculée par décomposition en valeurs singulières SVD).",
+            "L'interruption forcée du programme R ou Python.",
+            "L'ajout automatique de bruit gaussien infini sur Y."
         ],
         correctIndexes: [1]
     },
@@ -303,12 +282,12 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Afin de trouver le fameux optimum Biais-Variance, le document incite systématiquement le data scientist à :",
+        question: "Afin de trouver l'optimum Biais-Variance, la démarche classique consiste à :",
         options: [
-            "Diviser le jeu de données pour détecter le point où l'erreur de Prévision remonte brusquement pendant que l'erreur Train s'écroule.",
-            "Se concentrer uniquement sur le Log-Odds positif.",
+            "Tracer les courbes d'erreur d'Apprentissage et de Test en fonction de la complexité pour détecter le point de divergence.",
+            "Se concentrer uniquement sur l'optimisation de l'erreur d'apprentissage pour la descendre à zéro strict.",
             "Fusionner les deux ensembles d'étude dans une grande table commune indifférenciée.",
-            "Privilégier aveuglément la puissance quadratique quoi qu'il se passe."
+            "Privilégier aveuglément la puissance quadratique maximale."
         ],
         correctIndexes: [0]
     },
@@ -342,16 +321,7 @@ const extraQuestions = [
         ],
         correctIndexes: [0, 1]
     },
-    {
-        question: "Dans l'exemple de la distance d'arrêt de véhicules, l'utilisation du postulat de l'énergie cinétique (E_c = 1/2 m v²) justifie de chercher une relation polynomiale de quel ordre par rapport à la vitesse ?",
-        options: [
-            "L'énergie étant au carré vis-à-vis de la vitesse, on peut s'attendre à ce que la distance d'arrêt s'efforce de suivre une polynomialité de degré 2 (quadratique) de ce descripteur Vitesse (v).",
-            "La constante 'm' obligera l'algorithme à employer une régression l1.",
-            "Il faut éviter toute forme d'interaction entre la masse et le temps.",
-            "Une dimensionnalité cubique est seule capable de représenter l'inertie dans un modèle de machine learning de freins ABS."
-        ],
-        correctIndexes: [0]
-    },
+
     {
         question: "L'augmentation aveugle du degré polynomial sur un set comportant du Bruit est une recette assurée pour...",
         options: [
@@ -363,12 +333,12 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "D'après la synthèse « À Retenir » sur la Polynôme, quelle est la définition expresse (au mot près) du Surapprentissage ?",
+        question: "Quel est l'effet direct du phénomène de Surapprentissage (Overfitting) sur l'utilisation d'un modèle en production ?",
         options: [
-            "Méthode stochastique garantissant le Biais unitaire idéal.",
-            "Bête noire du data scientist : un modèle qui apprend par cœur les données d'entrée, mais qui est peu stable et n'a aucune capacité de généralisation.",
-            "Outil magiquement capable de réparer la multicolinéarité grâce au seuillage ROC-AUC.",
-            "L'introduction des degrés d'Euler de niveau N."
+            "Le modèle ne commettra presque aucune erreur grâce à son biais minimal unitaire.",
+            "Bien que l'erreur d'entraînement soit très faible, le modèle n'aura aucune fiabilité prédictive sur de nouvelles données.",
+            "Le modèle pourra corriger de lui-même la multicolinéarité restante de l'échantillon.",
+            "Il n'y a aucun effet négatif, reproduire 100% de la donnée est l'objectif du modélisateur."
         ],
         correctIndexes: [1]
     },
@@ -383,12 +353,12 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Un étudiant ayant répondu tout l'entraînement, mais échouant dès qu'il affronte un contrôle avec des valeurs X légèrement déplacées d'un virgule souffre métaphoriquement selon le professeur de :",
+        question: "Un modèle prédisant les loyers immobiliers possède un R² parfait de 1.0 sur les données qu'il a apprises, mais produit des prévisions complètement absurdes sur les biens voisins. De quoi souffre-t-il ?",
         options: [
-            "Précision optimale couplée à un Rappel Inversé.",
-            "D'Overfitting (Surapprentissage des annales en l'occurrence).",
-            "D'Underfitting (N'ayant jamais ouvert son livre).",
-            "D'un fort Bias."
+            "D'une précision optimale couplée à un rappel inversé.",
+            "D'Overfitting (Surapprentissage des données d'entraînement : il a appris par cœur le bruit).",
+            "D'Underfitting (Son modèle est trop simpliste et possède un biais trop fort).",
+            "D'un fort biais algorithmique."
         ],
         correctIndexes: [1]
     },

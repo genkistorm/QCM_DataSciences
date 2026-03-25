@@ -133,17 +133,17 @@ const allQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Si deux variables ont des échelles très différentes (ex: 1 à 8 pour les pièces, 20 à 200 pour la superficie), quel est l'impact sur l'optimisation ?",
+        question: "Si deux variables explicatives ont des échelles très différentes, quel est l'impact sur l'optimisation par Descente de Gradient ?",
         options: [
             "Cela empêche toute inversion matricielle.",
             "Cela n'a absolument aucun impact sur la descente de gradient.",
-            "Ce déséquilibre modifie la topologie de la fonction J et peut fortement ralentir la convergence de la descente de gradient.",
-            "Cela provoque immédiatement un problème de multicolinéarité."
+            "Ce déséquilibre modifie la topologie de la fonction de coût et peut fortement ralentir la convergence de la descente de gradient.",
+            "Cela provoque immédiatement l'annulation des gradients."
         ],
         correctIndexes: [2]
     },
     {
-        question: "Quelles sont les 4 hypothèses fondamentales de la régression linéaire multiple citées dans le cours ?",
+        question: "Quelles sont les hypothèses fondamentales de la régression linéaire multiple ?",
         options: [
             "Linéarité et Indépendance.",
             "Variance constante (homoscédasticité).",
@@ -183,7 +183,7 @@ const allQuestions = [
         correctIndexes: [1, 2, 3]
     },
     {
-        question: "Quelle est la formule théorique du MinMaxScaler décrite dans le cours pour une standardisation vers [0,1] ?",
+        question: "Quelle est la formule théorique du MinMaxScaler pour une ré-échelle vers l'intervalle [0,1] ?",
         options: [
             "(X - min(X)) / (max(X) - min(X))",
             "(X - moyenne(X)) / écart-type",
@@ -283,7 +283,7 @@ const allQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Quelle est la complexité algorithmique de la résolution analytique de la régression linéaire (selon le PDF) ?",
+        question: "Quelle est la complexité algorithmique de la résolution analytique exacte des moindres carrés (OLS) avec n variables ?",
         options: [
             "O(n)",
             "O(n^2)",
@@ -323,22 +323,22 @@ const allQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Quel test statistique évoqué dans le PDF permet la vérification de la significativité du modèle dans son ENSEMBLE ?",
+        question: "Quel test statistique permet la vérification de la significativité globale du modèle de régression ?",
         options: [
             "Test de Student.",
-            "Test de Fisher.",
+            "Test de Fisher (ANOVA).",
             "Test de Durbin-Watson.",
-            "R-carré de Pearson."
+            "Test du Chi-carré."
         ],
         correctIndexes: [1]
     },
     {
-        question: "Quel test statistique évoqué dans le PDF permet la vérification de la significativité des COEFFICIENTS de manière isolée ?",
+        question: "Quel test statistique permet de vérifier la significativité des coefficients pris individuellement ?",
         options: [
             "Test de Fisher.",
             "Test de Kolmogorov.",
-            "Test de Student.",
-            "Erreur Quadratique Moyenne."
+            "Test de Student (t-test).",
+            "Test de McNemar."
         ],
         correctIndexes: [2]
     },
@@ -363,7 +363,7 @@ const allQuestions = [
         correctIndexes: [0, 2]
     },
     {
-        question: "Selon la section \"À retenir\" de la Régression Lineaire Multivariée, OLS signifie :",
+        question: "Que signifie l'acronyme OLS en modélisation linéaire ?",
         options: [
             "Online Learning Standard.",
             "Ordinary Least Squares.",
@@ -373,7 +373,7 @@ const allQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Au sujet du centrage réduction en R, le PDF note que la fonction utile est :",
+        question: "En R, quelle fonction intégrée permet de réaliser facilement un centrage-réduction ?",
         options: [
             "scale(center=TRUE, scale=TRUE)",
             "normalize(mean=0, sd=1)",
@@ -405,7 +405,7 @@ const allQuestions = [
         correctIndexes: [0]
     },
     {
-        question: "Le cours introduit deux problématiques fondamentales illustrées par l'ajout de dimensions polynomiales :",
+        question: "L'ajout de degrés de liberté (complexité) dans un modèle polynomial confronte le modélisateur à deux notions au centre de l'évaluation :",
         options: [
             "Le surapprentissage (overfitting).",
             "Le seuillage du log-odds.",
@@ -444,26 +444,7 @@ const allQuestions = [
         ],
         correctIndexes: [1]
     },
-    {
-        question: "Le jeu de données \"cars\" utilisé en exemple dans la régression polynomiale met en relation :",
-        options: [
-            "Le prix des appartements à Paris en fonction du volume du garage.",
-            "La distance d'arrêt du véhicule en fonction de sa vitesse.",
-            "Le taux de survie des passagers et la taille des voitures.",
-            "Une relation suggérée quadratique (E_c = 1/2 m v²)."
-        ],
-        correctIndexes: [1, 3]
-    },
-    {
-        question: "Sur les données cars, la comparaison visuelle montre que :",
-        options: [
-            "La régression linéaire simple n'est pas parfaite car il manque une courbure.",
-            "La régression polynomiale d'ordre 2 suit bien mieux les données.",
-            "La droite affine est toujours le meilleur choix indépendamment du phénomène physique.",
-            "La régression de degré 2 provoque immédiatement un surapprentissage cataclysmique sur ces données."
-        ],
-        correctIndexes: [0, 1]
-    },
+
     {
         question: "Le surapprentissage (Overfitting) se produit lorsque :",
         options: [
@@ -474,16 +455,7 @@ const allQuestions = [
         ],
         correctIndexes: [0, 1]
     },
-    {
-        question: "Dans l'exemple du cours comparant des régressions polynomiales d'ordre 1, 3 et 9 sur 10 points de données :",
-        options: [
-            "L'ordre 9 passe par tous les points d'apprentissage mais oscille erratiquement.",
-            "L'ordre 9 est extrêmement stable si on change un tout petit peu le vecteur x.",
-            "Un petit changement de x entraîne d'énormes écarts de y pour le modèle d'ordre 9.",
-            "L'ordre 3 échoue à expliquer la tendance de base."
-        ],
-        correctIndexes: [0, 2]
-    },
+
     {
         question: "Lors de l'ajustement d'un polynôme de degré trop élevé (ex: ordre 9 sur 10 points), son instabilité prouve que :",
         options: [
@@ -494,16 +466,7 @@ const allQuestions = [
         ],
         correctIndexes: [1, 3]
     },
-    {
-        question: "A quel contexte scolaire le cours compare-il intuitivement le surapprentissage (overfitting) ?",
-        options: [
-            "Un étudiant qui refuse de lire les annales et improvise totalement.",
-            "Un étudiant qui triche en examen.",
-            "Un étudiant qui apprendrait des annales par cœur sans savoir appliquer les raisonnements dans d'autres contextes.",
-            "Un étudiant qui comprend chaque concept trop lentement."
-        ],
-        correctIndexes: [2]
-    },
+
     {
         question: "Comment détecte-t-on formellement et quantifie-t-on le surapprentissage dans le cadre du compromis biais-variance ?",
         options: [
@@ -565,7 +528,7 @@ const allQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Un modèle en \"Surapprentissage\" (Overfitting) se définit selon le cours par :",
+        question: "Un modèle en \"Surapprentissage\" (Overfitting) se définit classiquement par :",
         options: [
             "Un faible Biais sur les données d'entraînement.",
             "Une forte Variance.",
@@ -575,7 +538,7 @@ const allQuestions = [
         correctIndexes: [0, 1, 2]
     },
     {
-        question: "Le Biais du modèle correspond selon la définition du cours à :",
+        question: "Le Biais du modèle correspond conceptuellement à :",
         options: [
             "Une erreur causée par la suppression abrupte du Test set.",
             "La constante d'apprentissage aléatoirement tirée.",
@@ -605,7 +568,7 @@ const allQuestions = [
         correctIndexes: [1, 2]
     },
     {
-        question: "Tous les algorithmes de machine learning cités par le cours comme soumis au compromis biais-variance incluent :",
+        question: "Parmi ces algorithmes de Machine Learning, lesquels sont confrontés au compromis biais-variance ?",
         options: [
             "Forêts aléatoires.",
             "Réseaux de neurones.",
