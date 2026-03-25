@@ -75,20 +75,24 @@ function loadQuestion() {
     questionText.textContent = questionData.question;
     
     optionsGrid.innerHTML = '';
-    questionData.options.forEach((opt, index) => {
+    // Create an array of indexes and shuffle it to randomise option display
+    const shuffledIndexes = questionData.options.map((_, i) => i).sort(() => 0.5 - Math.random());
+    
+    shuffledIndexes.forEach(originalIndex => {
+        const opt = questionData.options[originalIndex];
         const btn = document.createElement('button');
         btn.classList.add('option-btn');
         btn.textContent = opt;
-        btn.dataset.index = index;
+        btn.dataset.index = originalIndex;
         
         btn.addEventListener('click', () => {
             if (isAnswerSubmitted) return;
             
-            if (selectedOptions.has(index)) {
-                selectedOptions.delete(index);
+            if (selectedOptions.has(originalIndex)) {
+                selectedOptions.delete(originalIndex);
                 btn.classList.remove('selected');
             } else {
-                selectedOptions.add(index);
+                selectedOptions.add(originalIndex);
                 btn.classList.add('selected');
             }
             
@@ -124,8 +128,9 @@ submitBtn.addEventListener('click', () => {
     
     // Reveal answers visually
     const buttons = optionsGrid.querySelectorAll('.option-btn');
-    buttons.forEach((btn, idx) => {
-        if (correctIndexes.has(idx)) {
+    buttons.forEach(btn => {
+        const originalIndex = parseInt(btn.dataset.index);
+        if (correctIndexes.has(originalIndex)) {
             btn.classList.add('correct-reveal');
         } else {
             btn.classList.add('wrong-reveal');

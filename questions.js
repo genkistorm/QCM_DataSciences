@@ -193,7 +193,7 @@ const allQuestions = [
         correctIndexes: [0]
     },
     {
-        question: "Comment se comporte le Normalizer par rapport aux deux autres Scalers (Standard et MinMax) ?",
+        question: "Comment se comporte le scaler Normalizer par rapport au StandardScaler et MinMaxScaler ?",
         options: [
             "Il travaille en lignes (pour les observations) et non en colonnes.",
             "Il permet d'obtenir une norme unité (l1 ou l2) pour chaque observation.",
@@ -475,7 +475,7 @@ const allQuestions = [
         correctIndexes: [0, 1]
     },
     {
-        question: "Dans la simulation 1 et 2 du cours comparant l'ordre 1, 3 et 9 sur 10 points :",
+        question: "Dans l'exemple du cours comparant des régressions polynomiales d'ordre 1, 3 et 9 sur 10 points de données :",
         options: [
             "L'ordre 9 passe par tous les points d'apprentissage mais oscille erratiquement.",
             "L'ordre 9 est extrêmement stable si on change un tout petit peu le vecteur x.",
@@ -485,7 +485,7 @@ const allQuestions = [
         correctIndexes: [0, 2]
     },
     {
-        question: "L'instabilité du modèle d'ordre 9 prouve que :",
+        question: "Lors de l'ajustement d'un polynôme de degré trop élevé (ex: ordre 9 sur 10 points), son instabilité prouve que :",
         options: [
             "Sa variance est extrêmement faible.",
             "Le meilleur ajustement sur les données de train n'implique pas la stabilité.",

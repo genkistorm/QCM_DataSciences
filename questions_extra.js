@@ -181,7 +181,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Parmi la liste détaillée des « Étapes du Machine Learning » situées en fin de document, quelles phases suivent directement l'Analyse Exploratoire ?",
+        question: "Dans un projet type de Machine Learning (selon la méthodologie du cours), quelles phases suivent directement l'Analyse Exploratoire ?",
         options: [
             "Prétraitement des variables et Échantillonnage.",
             "Création de PDF et Sauvegarde SQL.",
@@ -191,7 +191,7 @@ const extraQuestions = [
         correctIndexes: [0, 2]
     },
     {
-        question: "L'Analyse Exploratoire citée dans ces Étapes comprend traditionnellement :",
+        question: "L'Analyse Exploratoire d'un projet data comprend traditionnellement :",
         options: [
             "L'Analyse multiforme OLS.",
             "L'Analyse univariée.",
@@ -200,10 +200,10 @@ const extraQuestions = [
         ],
         correctIndexes: [1, 2]
     },
-    
+
     // -- MORE Qs about the PDF files contents ---
     {
-        question: "En reprenant l'exemple parisien de Multivariée avec le prix, des appartements et des mètres carrés. Combien de pièces comporte le pic principal statistique de distribution de la variable X1 ?",
+        question: "Dans l'exemple du cours prédisant le prix d'appartements parisiens en fonction de leurs pièces et m², combien de pièces comporte le pic principal statistique de distribution de la variable Pièces ?",
         options: [
             "2 pièces (~265 appartements).",
             "4 pièces (~50 appartements).",
@@ -213,7 +213,7 @@ const extraQuestions = [
         correctIndexes: [0]
     },
     {
-        question: "Dans ce même exemple immobilier, le pic caractéristique de la variable X2 (superficie) se situe entre :",
+        question: "Dans l'exemple du cours prédisant le prix d'appartements parisiens, le pic caractéristique de la distribution de la superficie (en m²) se situe entre :",
         options: [
             "10 et 20 m²",
             "30 et 40 m² (~110 appartements)",
@@ -223,7 +223,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Le scaler MinMaxScaler, d'après les visuels, transforme la distribution sans la recentrer totalement comme le ferait Standard. Quel est le défaut possible ou caractéristique visuelle notée ?",
+        question: "Contrairement au StandardScaler, le MinMaxScaler transforme la distribution sans la recentrer sur 0. Quel défaut ou caractéristique visuelle cela peut-il entraîner sur des données asymétriques ?",
         options: [
             "Il produit nécessairement une courbe cubique.",
             "Sur ces données asymétriques, il peut produire une distribution très étroite contrainte d'un côté.",
@@ -263,7 +263,7 @@ const extraQuestions = [
         correctIndexes: [2]
     },
     {
-        question: "Quelle recommandation le même cours fait-il face à une situation de Surapprentissage confirmée ?",
+        question: "Quelle est la recommandation générale face à une situation de Surapprentissage confirmée dans un modèle polynomial ?",
         options: [
             "Diminuer le seuil de décision à 0.5 strict.",
             "Chercher à multiplier le coefficient de corrélation de la Matrice X.",
@@ -293,7 +293,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "D'après la courbe illustrant le surapprentissage des voitures (simulation 2), la ligne de degré 9 relie quels genres de comportement entre les points x=5 et x=10 ?",
+        question: "En cas de surapprentissage extrême (ex: modèle polynomial de degré 9 passant par presque tous les points), quel comportement erratique observe-t-on souvent entre deux points d'apprentissage voisins (ex: entre x=5 et x=10) ?",
         options: [
             "Une simple droite horizontale de prévision = 0.",
             "Elle plonge et remonte brusquement, oscillant de façon erratique dans des extrêmes irréels au milieu du « vide » d'observation.",
@@ -343,7 +343,7 @@ const extraQuestions = [
         correctIndexes: [0, 1]
     },
     {
-        question: "Quand le chercheur écrit E_c = 1/2 m v² dans Polynôme.txt, il sous-entend de façon tacite que par ce postulat physique :",
+        question: "Dans l'exemple de la distance d'arrêt de véhicules, l'utilisation du postulat de l'énergie cinétique (E_c = 1/2 m v²) justifie de chercher une relation polynomiale de quel ordre par rapport à la vitesse ?",
         options: [
             "L'énergie étant au carré vis-à-vis de la vitesse, on peut s'attendre à ce que la distance d'arrêt s'efforce de suivre une polynomialité de degré 2 (quadratique) de ce descripteur Vitesse (v).",
             "La constante 'm' obligera l'algorithme à employer une régression l1.",
@@ -393,7 +393,7 @@ const extraQuestions = [
         correctIndexes: [1]
     },
     {
-        question: "Les conclusions portées à la fin réitèrent quelles étapes clés sur l'interprétation d'un modèle OLS ?",
+        question: "Quelles sont les étapes clés réitérées pour l'interprétation correcte d'un modèle de régression linéaire (OLS) une fois entraîné ?",
         options: [
             "Coefficients exprimant la force/impact direct par incrément d'une variable tout choses égales par ailleurs.",
             "Test Statistiques vérifiant l'importance du Modèle et de chaque paramètre distinct.",
@@ -403,7 +403,7 @@ const extraQuestions = [
         correctIndexes: [0, 1, 3]
     },
     {
-        question: "C'est la fin du QCM des PDF. Pour rappel final, quelle métrique de classification porte le rapport Précis Vrais Positifs sur Tous ceux que j'ai dit Positifs ?",
+        question: "Quelle métrique de classification correspond au rapport : Vrais Positifs divisé par Tous les individus prédits Positifs (TP + FP) ?",
         options: [
             "Le Rappel TP/(TP+FN)",
             "L'Accuracy globale ((TP+TN)/Total)",
