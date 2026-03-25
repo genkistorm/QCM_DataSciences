@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM Machine Learning</title>
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Setup Screen -->
+    <div id="setup-screen" class="screen active">
+        <div class="card setup-card">
+            <h1>Kahoot QCM Generator</h1>
+            <p>Révisez vos cours de Machine Learning !</p>
+            
+            <div class="slider-container">
+                <label for="question-count">Nombre de questions : <span id="question-count-display" class="neon-text">61</span></label>
+                <input type="range" id="question-count" min="10" max="61" step="1" value="61">
+            </div>
+
+            <button id="start-btn" class="btn primary-btn">DÉMARRER LE QUIZ ALÉATOIRE</button>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen hidden">
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div class="quiz-header">
+            <span class="question-tracker">Question <span id="current-q-index">1</span> / <span id="total-q-count">10</span></span>
+        </div>
+
+        <div class="question-container">
+            <h2 id="question-text">Question here</h2>
+            <p class="hint">Sélectionnez toutes les bonnes réponses (plusieurs possibles !)</p>
+        </div>
+
+        <div class="options-grid" id="options-grid">
+            <!-- Options injected by JS -->
+        </div>
+
+        <div class="action-bar">
+            <button id="submit-btn" class="btn secondary-btn" disabled>Valider la réponse</button>
+            <button id="next-btn" class="btn primary-btn hidden">Question Suivante</button>
+        </div>
+    </div>
+
+    <!-- Feedback Overlay -->
+    <div id="feedback-overlay" class="feedback hidden">
+        <h1 id="feedback-title">Correct!</h1>
+        <p id="feedback-text">Vous avez trouvé la ou les bonnes réponses.</p>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="result-screen" class="screen hidden">
+        <div class="card result-card">
+            <h1>Score Final</h1>
+            <div class="score-circle">
+                <span id="score-display">0</span> / <span id="score-total">10</span>
+            </div>
+            <p id="result-message">Bravo, vous avez terminé le quiz !</p>
+            <button id="restart-btn" class="btn primary-btn">Refaire un quiz</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="questions_extra.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
