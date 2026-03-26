@@ -24,11 +24,21 @@ const scoreTotalSpan = document.getElementById('score-total');
 const restartBtn = document.getElementById('restart-btn');
 
 // App State
+let sessionPool = []; // Pool de questions pour éviter les répétitions dans la même session
 let activeQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let selectedOptions = new Set();
 let isAnswerSubmitted = false;
+
+// Fonction de mélange Fisher-Yates pour une bonne randomisation
+function resetSessionPool() {
+    sessionPool = [...allQuestions];
+    for (let i = sessionPool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [sessionPool[i], sessionPool[j]] = [sessionPool[j], sessionPool[i]];
+    }
+}
 
 // Slider logic
 questionCountSlider.addEventListener('input', (e) => {
@@ -44,8 +54,13 @@ startBtn.addEventListener('click', () => {
         numQuestions = allQuestions.length;
     }
 
-    // Shuffle and slice
-    activeQuestions = [...allQuestions].sort(() => 0.5 - Math.random()).slice(0, numQuestions);
+    // Si on a moins de questions dans la pioche que demandé, on reconstitue le pool complet
+    if (sessionPool.length < numQuestions) {
+        resetSessionPool();
+    }
+
+    // Extraction des questions depuis le pool de la session (tirage SANS remise)
+    activeQuestions = sessionPool.splice(0, numQuestions);
     
     currentQuestionIndex = 0;
     score = 0;

@@ -291,47 +291,8 @@ const extraQuestions = [
         ],
         correctIndexes: [0]
     },
-    {
-        question: "La formule de la probabilité logistique (rappel partiel par l'Odds) stipule indirectement que lorsque le log-odds vaut strictement ZERO, la probabilité vaut :",
-        options: [
-            "Exactement 0% (événement impossible).",
-            "Garantie à 100%.",
-            "Précisément de 50% (car ln(1) = 0, odds = P/(1-P) = 1).",
-            "ln(0) n'existant pas, la courbe explose."
-        ],
-        correctIndexes: [2]
-    },
-    {
-        question: "Sur un problème qui exige une distinction vitale de deux événements aux conséquences funestes, quelle configuration a du sens ?",
-        options: [
-            "Prier pour un biais d'échantillonnage de zéro.",
-            "Gérer avec attention l'étude corrélée de la Précision et du Rappel plutôt que l'Accuracy de surface.",
-            "Prendre la pire régression OLS.",
-            "Mélanger Test et Déploiement sans validation croisée en invoquant le Théorème Central Limite."
-        ],
-        correctIndexes: [1]
-    },
-    {
-        question: "A quoi s'apparente la démarche d'appliquer les moindres carrés (minimiser MSE) comparativement à l'algorithme de descente gradient ?",
-        options: [
-            "OLS est la solution analytique stricte en un coup par résolution paramétrique d'équation.",
-            "Le Gradient est une exploration incrémentale/numérique itérative de la fonction J pour glisser au fond du bol.",
-            "Leur opposition ressemble à Moteur Thermique / Roue Carrée.",
-            "OLS ne produira systématiquement que des biais infinis."
-        ],
-        correctIndexes: [0, 1]
-    },
 
-    {
-        question: "L'augmentation aveugle du degré polynomial sur un set comportant du Bruit est une recette assurée pour...",
-        options: [
-            "Trouver l'équation parfaite de Gausse Logit.",
-            "Obliger le modèle à retenir de force le bruit et perdre totalement le signal originel global.",
-            "Une baisse continue miraculeuse de l'erreur Test.",
-            "Prouver l'homoscédasticité du processus."
-        ],
-        correctIndexes: [1]
-    },
+
     {
         question: "Quel est l'effet direct du phénomène de Surapprentissage (Overfitting) sur l'utilisation d'un modèle en production ?",
         options: [
@@ -349,16 +310,6 @@ const extraQuestions = [
             "Conséquence directe de l'annulation de la dérivée de J par rapport au vecteur Theta en format matrice mathématique algébrique formelle.",
             "La relation d'équivalence probabiliste de Bayes étendue au SVM Polynomial.",
             "La conversion du TP(Taux vrais Positifs) par validation K-fold Stratified."
-        ],
-        correctIndexes: [1]
-    },
-    {
-        question: "Un modèle prédisant les loyers immobiliers possède un R² parfait de 1.0 sur les données qu'il a apprises, mais produit des prévisions complètement absurdes sur les biens voisins. De quoi souffre-t-il ?",
-        options: [
-            "D'une précision optimale couplée à un rappel inversé.",
-            "D'Overfitting (Surapprentissage des données d'entraînement : il a appris par cœur le bruit).",
-            "D'Underfitting (Son modèle est trop simpliste et possède un biais trop fort).",
-            "D'un fort biais algorithmique."
         ],
         correctIndexes: [1]
     },

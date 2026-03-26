@@ -83,14 +83,14 @@ const allQuestions = [
 
     // --- REGRESSION LINEAIRE MULTIVARIEE (Cours) ---
     {
-        question: "La régression linéaire multivariée est classée dans quel type d'apprentissage ?",
+        question: "Dans quelle catégorie globale de Machine Learning (explicitement mise en évidence dans les en-têtes du cours) sont conjointement classées la Régression Linéaire Multivariée, la Régression Polynomiale et la Régression Logistique ?",
         options: [
             "Apprentissage non supervisé.",
-            "Apprentissage par renforcement.",
             "Apprentissage supervisé.",
-            "Apprentissage auto-supervisé."
+            "Apprentissage par renforcement.",
+            "Apprentissage semi-supervisé."
         ],
-        correctIndexes: [2]
+        correctIndexes: [1]
     },
     {
         question: "Dans le cadre de la régression linéaire multivariée, qu'est-ce qui constitue \"autant de degrés de liberté pour approximer au mieux les données\" ?",
